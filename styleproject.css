@@ -1,0 +1,90 @@
+body {
+    background-image: linear-gradient(
+      -225deg,
+      #2cd8d5 0%,
+      #c5c1ff 56%,
+      #ffbac3 100%
+    );
+    text-align: center;
+  }
+  
+  html {
+    min-height: 100%;
+  }
+  
+  h1 {
+    color: black;
+  }
+  
+  .sun-emoji {
+    color: yellow;
+  }
+  
+  .wind-humidity {
+    margin: 0 auto;
+    margin-top: 10px;
+    color: black;
+    text-align: center;
+    padding: 20px 20px;
+  }
+  
+  .card-body {
+    background-image: linear-gradient(
+      -225deg,
+      #2cd8d5 0%,
+      #6b8dd6 48%,
+      #8e37d7 100%
+    );
+    border-radius: 20px;
+    border: none;
+  }
+  .card {
+    display: block;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: none;
+    margin-top: 20px;
+  }
+
+  .current-dateTime {
+    font-size: large;
+  }
+  
+  #position-btn {
+    color: black;
+    border-radius: 5px;
+    background: #6ED0E2;
+    margin-top: 20px;
+    box-shadow:     0 1px 5px rgba(0,0,0,0.5);
+    width: 10%;
+  }
+
+  #position-btn:hover {
+      background: #BDC2FB;
+  }
+
+  #search-city-btn {
+      background: #6ED0E2;
+      border-radius: 5px;
+      margin-top: 20px;
+      box-shadow:     0 1px 5px rgba(0,0,0,0.5);
+      margin-right: 50px;
+      width: 10%;
+  }
+
+  #search-city-btn:hover {
+    background: #BDC2FB;  
+  }
+  
+  #five-day-forecast {
+      margin-top: 20px;
+  }
+  
+  .form-control {
+      border-radius: 5px;
+      border:none;
+      width: 40%;
+      display: block;
+      margin: 0 auto;
+      margin-top: 10px;
+  }
