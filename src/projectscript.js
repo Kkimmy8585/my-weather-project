@@ -47,21 +47,8 @@ function showTemperature(response) {
   windElement.innerHTML = `Wind: 🌬 ${windSpeed} mph`;
 
 }
-
-function showLocation(position) {
-  let units = "imperial";
-  let apiKey = "e6c9e73e7cfe9a8579ac95fa4c71d203";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${units}`;
-
   axios.get(apiUrl).then(showTemperature);
-}
-function getCurrentPosition(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(showLocation);
 
-let button = document.querySelector("#position");
-button.addEventListener("click", showLocation);
 
-}
 
 
