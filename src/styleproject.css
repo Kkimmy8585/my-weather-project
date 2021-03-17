@@ -49,19 +49,6 @@ body {
   .current-dateTime {
     font-size: large;
   }
-  
-  #position-btn {
-    color: black;
-    border-radius: 5px;
-    background: #6ED0E2;
-    margin-top: 20px;
-    box-shadow:     0 1px 5px rgba(0,0,0,0.5);
-    width: 10%;
-  }
-
-  #position-btn:hover {
-      background: #BDC2FB;
-  }
 
   #search-city-btn {
       background: #6ED0E2;
