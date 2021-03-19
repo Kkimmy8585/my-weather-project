@@ -82,3 +82,14 @@ body {
       margin: 0 auto;
       margin-top: 10px;
   }
+
+  .container-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid blueviolet;
+    border-radius: 10px;
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+
+}
