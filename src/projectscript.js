@@ -19,7 +19,7 @@ h2.innerHTML = `${day} ${hours}: ${minutes}`;
 function search(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-text-input");
-  let h1 = document.querySelector(".location");
+  let h1 = document.querySelector("#location");
   h1.innerHTML = `${searchInput.value}`;
   let units = "imperial";
   let apiKey = "e6c9e73e7cfe9a8579ac95fa4c71d203";
@@ -32,10 +32,10 @@ form.addEventListener("submit", search);
 
 function showTemperature(response) {
   let currentTemperature = Math.round(response.data.main.temp);
-  let h2 = document.querySelector(".temperature");
+  let h2 = document.querySelector("#temperature");
   h2.innerHTML = `${currentTemperature}°F`;
   let city = response.data.name;
-  let h1 = document.querySelector(".location");
+  let h1 = document.querySelector("#location");
   h1.innerHTML = city;
   let tempDescription = document.querySelector(".current-conditions");
   tempDescription.innerHTML = response.data.weather[0].description;
