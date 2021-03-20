@@ -22,6 +22,7 @@ if (hours < 10) {
 let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes= `0 ${minutes}`;
+}
 return `${day} ${hours}:${minutes}`;
 }
 
@@ -55,7 +56,7 @@ function showTemperature(response) {
   humidityElement.innerHTML = `Humidity: ${humidityDescription}%`;
   let windElement = document.querySelector("#wind-speed");
   let windSpeed = Math.round(response.data.wind.speed);
-  windElement.innerHTML = `Wind: 🌬 ${windSpeed} mph`;
+  windElement.innerHTML = `Wind: 🌬 ${windSpeed}`;
 
 }
   axios.get(apiUrl).then(showTemperature);
