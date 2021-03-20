@@ -1,6 +1,6 @@
-let now = new Date();
-let h2 = document.querySelector(".current-dateTime");
-let days = [
+function formatDate(timestamp) {
+ let now = new Date(timestamp);
+ let days = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -9,12 +9,21 @@ let days = [
   "Friday",
   "Saturday"
 ];
-let day = days[now.getDay()];
-let date = now.getDate();
-let hours = now.getHours();
-let minutes = now.getMinutes();
+ let day = days[now.getDay()];
+ return`${day} ${formatHours(timestamp)}`;
+}
 
-h2.innerHTML = `${day} ${hours}: ${minutes}`;
+function formatHours(timestamp) {
+let now = new Date(timestamp);
+let hours = now.getHours();
+if (hours < 10) {
+  hours = `0 ${hours}`;
+}
+let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes= `0 ${minutes}`;
+return `${day} ${hours}:${minutes}`;
+}
 
 function search(event) {
   event.preventDefault();
@@ -37,6 +46,8 @@ function showTemperature(response) {
   let city = response.data.name;
   let h1 = document.querySelector("#location");
   h1.innerHTML = city;
+  let dateElement = document.querySelector(".current-dateTime");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   let tempDescription = document.querySelector(".current-conditions");
   tempDescription.innerHTML = response.data.weather[0].description;
   let humidityElement = document.querySelector("#humidity");
@@ -48,7 +59,5 @@ function showTemperature(response) {
 
 }
   axios.get(apiUrl).then(showTemperature);
-
-
 
 
