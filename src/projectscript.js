@@ -23,7 +23,7 @@ let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes= `0 ${minutes}`;
 }
-return `${day} ${hours}:${minutes}`;
+return `${hours}:${minutes}`;
 }
 
 function search(event) {
@@ -59,6 +59,6 @@ function showTemperature(response) {
   windElement.innerHTML = `Wind: 🌬 ${windSpeed}`;
 
 }
-  axios.get(apiUrl).then(showTemperature);
+  
 
 
