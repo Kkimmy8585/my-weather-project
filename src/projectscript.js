@@ -56,7 +56,7 @@ function showTemperature(response) {
   humidityElement.innerHTML = `Humidity: ${humidityDescription}%`;
   let windElement = document.querySelector("#wind-speed");
   let windSpeed = Math.round(response.data.wind.speed);
-  windElement.innerHTML = `Wind: 🌬 ${windSpeed}km`;
+  windElement.innerHTML = `Wind: 🌬 ${windSpeed} km/h`;
 
 }
 
@@ -70,7 +70,7 @@ forecastElement.innerHTML = null;
       forecastElement.innerHTML += `
   <div class="col-1">
   <ul>
-      <li id="forecast-time">${formatForecastTime(forecast.dt * 1000)}</li>
+      <li id="forecast-time">${formatHours(forecast.dt * 1000)}</li>
       <li><img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" /></li>
       <li id="forecast-max-min"><strong>${Math.round(forecast.main.temp_max)}°</strong> ${Math.round(forecast.main.temp_min)}°</li>
   </ul>
