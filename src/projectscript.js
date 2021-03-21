@@ -66,17 +66,24 @@ forecastElement.innerHTML = null;
   let forecast = null;
   
   for (let index = 0; index < 6; index++) {
-      forecast = response.data.list[index];
-      forecastElement.innerHTML += `
-  <div class="col-1">
-  <ul>
-      <li id="forecast-time">${formatHours(forecast.dt * 1000)}</li>
-      <li><img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" /></li>
-      <li id="forecast-max-min"><strong>${Math.round(forecast.main.temp_max)}°</strong> ${Math.round(forecast.main.temp_min)}°</li>
-  </ul>
-</div>`;
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+    <div class="col-2">
+      <h3>
+        ${formatHours(forecast.dt * 1000)}
+      </h3>
+      <img
+        src="src/media/${forecast.weather[0].icon}.png"
+      />
+      <div class="weather-forecast-temperature">
+        <strong>
+          ${Math.round(forecast.main.temp_max)}°
+        </strong>
+        ${Math.round(forecast.main.temp_min)}°
+      </div>
+    </div>
+  `;
   }
-}
   
 
 
