@@ -84,6 +84,7 @@ forecastElement.innerHTML = null;
     </div>
   `;
   }
+}
   
 
 
