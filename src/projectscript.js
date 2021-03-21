@@ -56,8 +56,26 @@ function showTemperature(response) {
   humidityElement.innerHTML = `Humidity: ${humidityDescription}%`;
   let windElement = document.querySelector("#wind-speed");
   let windSpeed = Math.round(response.data.wind.speed);
-  windElement.innerHTML = `Wind: 🌬 ${windSpeed}`;
+  windElement.innerHTML = `Wind: 🌬 ${windSpeed}km`;
 
+}
+
+function showForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+forecastElement.innerHTML = null;
+  let forecast = null;
+  
+  for (let index = 0; index < 6; index++) {
+      forecast = response.data.list[index];
+      forecastElement.innerHTML += `
+  <div class="col-1">
+  <ul>
+      <li id="forecast-time">${formatForecastTime(forecast.dt * 1000)}</li>
+      <li><img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" /></li>
+      <li id="forecast-max-min"><strong>${Math.round(forecast.main.temp_max)}°</strong> ${Math.round(forecast.main.temp_min)}°</li>
+  </ul>
+</div>`;
+  }
 }
   
 
