@@ -10,6 +10,10 @@ body {
   h1 {
     color: black;
   }
+
+  h2 {
+    font-size: medium;
+  }
   
   .sun-emoji {
     color: yellow;
@@ -47,8 +51,9 @@ body {
     margin-top: 30px;
 }
 
-  .current-dateTime {
+  #current-dateTime {
     font-size: large;
+    font-weight: bold;
   }
 
   #search-city-btn {

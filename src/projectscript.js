@@ -47,7 +47,7 @@ function showTemperature(response) {
   let city = response.data.name;
   let h1 = document.querySelector("#location");
   h1.innerHTML = city;
-  let dateElement = document.querySelector(".current-dateTime");
+  let dateElement = document.querySelector("#current-dateTime");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   let tempDescription = document.querySelector(".current-conditions");
   tempDescription.innerHTML = response.data.weather[0].description;
