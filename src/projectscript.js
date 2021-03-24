@@ -26,28 +26,7 @@ if (minutes < 10) {
 return `${hours}:${minutes}`;
 }
 
-function search(city) {
-  
-  let units = "imperial";
-  let apiKey = "e6c9e73e7cfe9a8579ac95fa4c71d203";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(showTemperature);
 
-   apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(showTemperature);
-}
-
-function handleSubmit(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-text-input");
-  let city = document.querySelector("#location");
-  city.innerHTML = `${searchInput.value}`;
-  
-
-}
-
-let form = document.querySelector("#search-city-form");
-form.addEventListener("submit", handleSubmit);
 
 function showTemperature(response) {
   let currentTemperature = Math.round(response.data.main.temp);
@@ -68,6 +47,27 @@ function showTemperature(response) {
   windElement.innerHTML = `Wind: 🌬 ${windSpeed} km/h`;
 
 }
+
+function search(city) {
+  
+  let units = "imperial";
+  let apiKey = "e6c9e73e7cfe9a8579ac95fa4c71d203";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemperature);
+
+   apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-text-input");
+  let city = document.querySelector("#location");
+  city.innerHTML = `${searchInput.value}`;
+  }
+
+let form = document.querySelector("#search-city-form");
+form.addEventListener("submit", handleSubmit);
 
 function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
