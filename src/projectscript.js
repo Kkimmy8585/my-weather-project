@@ -26,19 +26,28 @@ if (minutes < 10) {
 return `${hours}:${minutes}`;
 }
 
-function search(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-text-input");
-  let h1 = document.querySelector("#location");
-  h1.innerHTML = `${searchInput.value}`;
+function search(city) {
+  
   let units = "imperial";
   let apiKey = "e6c9e73e7cfe9a8579ac95fa4c71d203";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemperature);
+
+   apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
 }
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-text-input");
+  let city = document.querySelector("#location");
+  city.innerHTML = `${searchInput.value}`;
+  
+
+}
+
 let form = document.querySelector("#search-city-form");
-form.addEventListener("submit", search);
+form.addEventListener("submit", handleSubmit);
 
 function showTemperature(response) {
   let currentTemperature = Math.round(response.data.main.temp);
@@ -86,5 +95,6 @@ forecastElement.innerHTML = null;
   }
 }
   
+search("New York");
 
 
