@@ -26,8 +26,6 @@ if (minutes < 10) {
 return `${hours}:${minutes}`;
 }
 
-
-
 function showTemperature(response) {
   let currentTemperature = Math.round(response.data.main.temp);
   let h2 = document.querySelector("#temperature");
@@ -55,8 +53,8 @@ function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
 
-   apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(showTemperature);
+   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showForecast);
 }
 
 function handleSubmit(event) {
@@ -82,7 +80,7 @@ forecastElement.innerHTML = null;
         ${formatHours(forecast.dt * 1000)}
       </h3>
       <img
-        src="src/media/${forecast.weather[0].icon}.png"
+        src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
       />
       <div class="weather-forecast-temperature">
         <strong>
