@@ -97,7 +97,7 @@ body {
 }
 
 .container-fluid {
-  padding: 16px;
+  padding: 16px 16px;
   max-width: 100%;
 
 }
