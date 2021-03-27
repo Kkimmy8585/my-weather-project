@@ -11,6 +11,10 @@ body {
   h1 {
     color: black;
   }
+  
+  #temperature {
+    font-size: 35px;
+  }
 
   h2 {
     font-size: medium;
