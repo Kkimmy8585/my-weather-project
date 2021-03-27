@@ -19,9 +19,6 @@ body {
   h2 {
     font-size: medium;
   }
-  .weather-forecast {
-    max-width: 100%;
-  }
   
  #forecast {
     color: #8e37d7;
