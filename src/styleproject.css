@@ -19,9 +19,10 @@ body {
   h2 {
     font-size: medium;
   }
-  
-  .sun-emoji {
-    color: yellow;
+
+  #forecast {
+    color: #8e37d7;
+    max-width: 100%;
   }
   
   .wind-humidity {
@@ -75,10 +76,6 @@ body {
 
   #search-city-btn:hover {
     background: #BDC2FB;  
-  }
-  
-  #hourly-forecast {
-      margin-top: 20px;
   }
   
   .form-control {
