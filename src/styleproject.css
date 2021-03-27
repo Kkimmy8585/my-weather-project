@@ -100,7 +100,6 @@ body {
 
 .container-fluid {
   padding: 16px 16px;
-  max-width: 600x;
-  max-height: 900px;
+  max-width: 600px;
 
 }
